@@ -38,21 +38,16 @@ The analysis uses the following publicly available datasets:
 The raw datasets are not distributed with this repository. Please download them from their official sources before running the workflow.
 
 ## Installation
-Python 3.11
 
-geopandas
+### Requirements
 
-numpy
+- Python 3.11 or later
 
-pandas
+### Install dependencies
 
-matplotlib
-
-esda
-
-libpysal
-
+```bash
 pip install -r requirements.txt
+```
 
 ## Usage
 
