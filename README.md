@@ -67,5 +67,18 @@ python src/create_lisa.py
 
 ## Citation
 
-If you use this repository, please cite:
-...
+If you use this repository, data, or source code in your research or project, please cite it as follows:
+
+> **Tran, T. L. (2025)**. *Surface Urban Heat Island (SUHI) Analysis in Vietnam 2025* [Source code and Data]. GitHub. [https://github.com/ilovecaffeine/vietnam-suhi-2025](https://github.com/ilovecaffeine/vietnam-suhi-2025)
+
+### BibTeX
+
+```bibtex
+@misc{tran2025vietnam_suhi,
+  author       = {Tran, Thien Loc},
+  title        = {Surface Urban Heat Island (SUHI) Analysis in Vietnam 2025},
+  year         = {2025},
+  publisher    = {GitHub},
+  journal      = {GitHub repository},
+  howpublished = {\url{https://github.com/ilovecaffeine/vietnam-suhi-2025}}
+}
