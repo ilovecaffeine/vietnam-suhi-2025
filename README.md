@@ -32,12 +32,15 @@ docs/                Project documentation
 
 The analysis uses the following publicly available datasets:
 
+### 1. MODIS Land Surface Temperature (MYD11A2)
 > **Wan, Z., Hook, S., & Hulley, G. (2021)**. *MODIS/Aqua Land Surface Temperature/Emissivity 8-Day L3 Global 1km SIN Grid V061* [Dataset]. NASA Land Processes Distributed Active Archive Center. [https://doi.org/10.5067/MODIS/MYD11A2.061](https://doi.org/10.5067/MODIS/MYD11A2.061) *(Accessed: 2026-07-17)*
 
+### 2. Global Human Settlement Layer (GHS-SMOD)
 > **Schiavina, M., Melchiorri, M., & Pesaresi, M. (2023)**. *GHS-SMOD R2023A - GHS settlement layers, application of the Degree of Urbanisation methodology (stage I) to GHS-POP R2023A and GHS-BUILT-S R2023A, multitemporal (1975-2030)*. European Commission, Joint Research Centre (JRC).<br>
 > 🔗 **PID:** [http://data.europa.eu/89h/a0df7a6f-49de-46ea-9bde-563437a6e2ba](http://data.europa.eu/89h/a0df7a6f-49de-46ea-9bde-563437a6e2ba)<br>
 > 🔗 **DOI:** [10.2905/A0DF7A6F-49DE-46EA-9BDE-563437A6E2BA](https://doi.org/10.2905/A0DF7A6F-49DE-46EA-9BDE-563437A6E2BA)
 
+### 3. Viet Nam Administrative Boundaries (UN OCHA)
 > **UN OCHA (2025)**. *Viet Nam - Subnational Administrative Boundaries* [Dataset]. Humanitarian Data Exchange (HDX). [https://data.humdata.org/dataset/cod-ab-vnm](https://data.humdata.org/dataset/cod-ab-vnm) *(Accessed: 2026-07-17)*
 
 Please cite the original data providers when using these datasets.
