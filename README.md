@@ -38,6 +38,8 @@ The analysis uses the following publicly available datasets:
 > 🔗 **PID:** [http://data.europa.eu/89h/a0df7a6f-49de-46ea-9bde-563437a6e2ba](http://data.europa.eu/89h/a0df7a6f-49de-46ea-9bde-563437a6e2ba)<br>
 > 🔗 **DOI:** [10.2905/A0DF7A6F-49DE-46EA-9BDE-563437A6E2BA](https://doi.org/10.2905/A0DF7A6F-49DE-46EA-9BDE-563437A6E2BA)
 
+> **UN OCHA (2025)**. *Viet Nam - Subnational Administrative Boundaries* [Dataset]. Humanitarian Data Exchange (HDX). [https://data.humdata.org/dataset/cod-ab-vnm](https://data.humdata.org/dataset/cod-ab-vnm) *(Accessed: 2026-07-17)*
+
 Please cite the original data providers when using these datasets.
 
 ## Installation
