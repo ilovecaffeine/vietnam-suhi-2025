@@ -30,14 +30,12 @@ docs/                Project documentation
 
 ## Data
 
-Input:
-- LST raster
-- GHS-SMOD raster
+The analysis uses the following publicly available datasets:
 
-Output:
-- urban_zones_suhi.geojson
-- suhi_results.xlsx
-- figures
+- **MODIS Land Surface Temperature (LST)** – NASA MODIS Collection 6.1
+- **GHS-SMOD** – Global Human Settlement Layer (European Commission)
+
+The raw datasets are not distributed with this repository. Please download them from their official sources before running the workflow.
 
 ## Installation
 Python 3.11
