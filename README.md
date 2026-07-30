@@ -35,7 +35,7 @@ The analysis uses the following publicly available datasets:
 - **MODIS Land Surface Temperature (LST)** – NASA MODIS Collection 6.1
 - **GHS-SMOD** – Global Human Settlement Layer (European Commission)
 
-The raw datasets are not distributed with this repository. Please download them from their official sources before running the workflow.
+Please cite the original data providers when using these datasets.
 
 ## Installation
 
