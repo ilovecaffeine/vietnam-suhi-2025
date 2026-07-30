@@ -6,3 +6,4 @@ pandas
 scipy
 esda
 libpysal
+rasterio
