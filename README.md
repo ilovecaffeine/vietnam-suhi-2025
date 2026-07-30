@@ -34,6 +34,11 @@ The analysis uses the following publicly available datasets:
 
 - **MODIS Land Surface Temperature (LST)** – NASA MODIS Collection 6.1
 - **GHS-SMOD** – Global Human Settlement Layer (European Commission)
+- Schiavina M., Melchiorri M., Pesaresi M. (2023): GHS-SMOD R2023A - GHS settlement layers, application of the Degree of Urbanisation methodology (stage I) to GHS-POP R2023A and GHS-BUILT-S R2023A, multitemporal (1975-2030). European Commission, Joint Research Centre (JRC). PID: http://data.europa.eu/89h/a0df7a6f-49de-46ea-9bde-563437a6e2ba, doi:10.2905/A0DF7A6F-49DE-46EA-9BDE-563437A6E2BA
+- > **Schiavina, M., Melchiorri, M., & Pesaresi, M. (2023)**. *GHS-SMOD R2023A - GHS settlement layers, application of the Degree of Urbanisation methodology (stage I) to GHS-POP R2023A and GHS-BUILT-S R2023A, multitemporal (1975-2030)*. European Commission, Joint Research Centre (JRC).  
+> 🔗 **PID:** [http://data.europa.eu/89h/a0df7a6f-49de-46ea-9bde-563437a6e2ba](http://data.europa.eu/89h/a0df7a6f-49de-46ea-9bde-563437a6e2ba)  
+> 🔗 **DOI:** [10.2905/A0DF7A6F-49DE-46EA-9BDE-563437A6E2BA](https://doi.org/10.2905/A0DF7A6F-49DE-46EA-9BDE-563437A6E2BA)
+
 
 Please cite the original data providers when using these datasets.
 
