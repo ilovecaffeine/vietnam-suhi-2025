@@ -60,11 +60,32 @@ pip install -r requirements.txt
 
 ## Usage
 
-python src/compute_suhi.py
+Run the processing scripts in the following order:
 
+```bash
+python src/urban_01.py
+python src/rural_01.py
+python src/urban_01_filter.py
+python src/urban_zone_polygonize.py
+python src/rural_zone_buffer.py
+python src/calSUHI.py
 python src/create_statistics.py
+```
 
-python src/create_lisa.py
+The workflow performs the following steps:
+
+1. Extract urban areas from the GHS-SMOD dataset.
+2. Extract rural areas from the GHS-SMOD dataset.
+3. Remove small urban clusters and assign unique IDs.
+4. Convert urban clusters into vector polygons.
+5. Generate rural reference zones using 2–10 km ring buffers.
+6. Calculate Surface Urban Heat Island (SUHI) intensity for each urban zone.
+7. Generate summary statistics, spatial autocorrelation analysis, and figures.
+
+Final outputs are saved in:
+
+- `data/results/`
+- `figures/`
 
 ## Citation
 
