@@ -28,6 +28,16 @@ figures/             Generated figures
 docs/                Project documentation
 ```
 
+```text
+vietnam-suhi-2025/
+├── 📂 src/
+├── 📂 data/
+│   ├── 📁 raw/
+│   ├── 📁 intermediate/
+│   └── 📁 results/
+├── 📂 figures/
+└── 📂 docs/
+
 ## Data
 
 The analysis uses the following publicly available datasets:
