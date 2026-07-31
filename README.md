@@ -3,7 +3,7 @@ A Python workflow for estimating and analyzing Surface Urban Heat Island (SUHI) 
 
 ## Overview
 
-This repository provides a reproducible workflow for estimating and analyzing Surface Urban Heat Island (SUHI) intensity across urban areas in Vietnam using remotely sensed land surface temperature and urban extent datasets.
+This repository provides a reproducible workflow for estimating and analyzing Surface Urban Heat Island (SUHI) intensity across urban areas in Vietnam during the April–August 2025 study period using MODIS MYD11A2 Land Surface Temperature (LST) and GHS-SMOD urban extent datasets.
 
 ## Features
 
