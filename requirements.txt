@@ -7,3 +7,4 @@ scipy
 esda
 libpysal
 rasterio
+scikit-image
