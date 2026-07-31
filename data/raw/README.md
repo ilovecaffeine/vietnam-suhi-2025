@@ -4,7 +4,7 @@ This directory contains the original datasets used to estimate Surface Urban Hea
 
 ---
 
-## Directory Structure
+## Subdirectories
 
 ### `GHS-SMOD/`
 Contains the original Global Human Settlement Layer (GHS-SMOD) datasets used to classify urban and rural areas.
