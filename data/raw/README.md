@@ -4,14 +4,26 @@ This directory stores the original input datasets used for calculating the Surfa
 
 ---
 
-## 📁 Directory Structure & Files
+## Directory Structure
 
-### 📂 Subdirectories
-* **`GHS-SMOD/`**: Contains raw Global Human Settlement Layer (GHS-SMOD) datasets used for urban and rural area classification.
-* **`HUMDATA/`**: Contains Vietnam administrative boundary spatial data downloaded from HDX.
-* **`MYD11A2/`**: Contains MODIS Aqua Land Surface Temperature (LST) 8-day 1km datasets and the Google Earth Engine (GEE) export script.
+### `GHS-SMOD/`
+Contains the original Global Human Settlement Layer (GHS-SMOD) datasets used to classify urban and rural areas.
 
-### 📄 Clipped GeoTIFF Files
-* **`GHS_SMOD_clipped_vn.tif`**: Urban/rural settlement classification raster clipped to Vietnam's national boundary.
-* **`MYD11A2_A2025_clipped_vn.tif`**: Median Land Surface Temperature (LST) 2025 raster clipped to Vietnam's national boundary.
+### `HUMDATA/`
+Contains Vietnam administrative boundary data downloaded from the Humanitarian Data Exchange (HDX).
+
+### `MYD11A2/`
+Contains the original MODIS Aqua MYD11A2 Land Surface Temperature (LST) datasets and the Google Earth Engine (GEE) script used to export the data.
+
+---
+
+## Clipped Datasets
+
+### `GHS_SMOD_clipped_vn.tif`
+GHS-SMOD raster clipped to the Vietnam national boundary.
+
+### `MYD11A2_A2025_clipped_vn.tif`
+Median MODIS MYD11A2 Land Surface Temperature (LST) raster for the study period, clipped to the Vietnam national boundary.
+
+---
 
