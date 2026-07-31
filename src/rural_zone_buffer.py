@@ -1,22 +1,17 @@
 """
-urban_zone_polygonize.py
+rural_zone_polygonize.py
 
-Convert the urban ID raster into urban zone polygons and
-export the result as a GeoJSON file.
+Generate rural zones as ring buffers surrounding urban zones.
 
-Each polygon represents one urban zone and includes:
-- Zone ID
-- Zone type
-- Area (km²)
-- Representative longitude and latitude
+Each rural zone is defined as:
+- Outer buffer: 10 km
+- Inner buffer: 2 km
+- Existing urban areas are excluded from the final geometry.
 """
 
 from pathlib import Path
 
 import geopandas as gpd
-import rasterio
-from rasterio.features import shapes
-from shapely.geometry import shape
 
 # ============================================================
 # Project directories
@@ -31,146 +26,103 @@ INTERMEDIATE_DIR = DATA_DIR / "intermediate"
 # Input and output files
 # ============================================================
 
-raster_path = INTERMEDIATE_DIR / "GHS_SMOD_urban_id.tif"
+input_file = INTERMEDIATE_DIR / "urban_zones.geojson"
 
-geojson_output_path = INTERMEDIATE_DIR / "urban_zones.geojson"
-
-# ============================================================
-# Read urban ID raster
-# ============================================================
-
-print("Converting urban ID raster to polygons...")
-
-with rasterio.open(raster_path) as src:
-
-    image = src.read(1)
-
-    mask = (
-        (image != src.nodata)
-        & (image > 0)
-    )
-
-    transform = src.transform
-    crs = src.crs
+output_file = INTERMEDIATE_DIR / "rural_zones.geojson"
 
 # ============================================================
-# Polygonize raster
+# Coordinate reference system
 # ============================================================
 
-records = []
+METRIC_CRS = "EPSG:32648"
 
-for geom, value in shapes(
-    image,
-    mask=mask,
-    transform=transform,
-):
+# ============================================================
+# Generate rural zones
+# ============================================================
 
-    records.append(
-        {
-            "geometry": shape(geom),
-            "zone_id": int(value),
-            "zone_type": "urban",
-        }
-    )
+try:
+
+    print("Generating rural zones...")
+
+    gdf = gpd.read_file(input_file)
+
+    # Reproject to a projected CRS (meters)
+    gdf = gdf.to_crs(METRIC_CRS)
+
+    # Merge all urban polygons into a single geometry
+    urban_union = gdf.geometry.union_all()
+
+    rural_features = []
+
+    print("Creating 2–10 km ring buffers...")
+
+    for _, row in gdf.iterrows():
+
+        urban_geom = row.geometry
+
+        # Outer buffer (10 km)
+        outer = urban_geom.buffer(10000)
+
+        # Inner buffer (2 km)
+        inner = urban_geom.buffer(2000)
+
+        # Create ring buffer
+        ring = outer.difference(inner)
+
+        # Remove all urban areas
+        ring = ring.difference(urban_union)
+
+        # Repair invalid geometries
+        try:
+
+            ring = ring.make_valid()
+
+        except AttributeError:
+
+            # Compatible with Shapely < 2.0
+            ring = ring.buffer(0)
+
+        # Skip empty geometries
+        if ring.is_empty:
+            continue
+
+        rural_features.append(
+            {
+                "geometry": ring,
+                "zone_id": int(row["zone_id"]),
+                "zone_type": "rural",
+            }
+        )
 
 # ============================================================
 # Create GeoDataFrame
 # ============================================================
 
-gdf = gpd.GeoDataFrame(
-    records,
-    crs=crs,
-)
+    gdf_rural = gpd.GeoDataFrame(
+        rural_features,
+        crs=METRIC_CRS,
+    )
 
-# Merge polygons with the same urban ID
-gdf = gdf.dissolve(
-    by=[
-        "zone_id",
-        "zone_type",
-    ],
-    as_index=False,
-)
-
-# ============================================================
-# Repair invalid geometries
-# ============================================================
-
-try:
-
-    gdf["geometry"] = gdf.geometry.make_valid()
-
-except AttributeError:
-
-    # Compatible with Shapely < 2.0
-    gdf["geometry"] = gdf.buffer(0)
-
-# ============================================================
-# Calculate polygon area (km²)
-# ============================================================
-
-gdf["area_km2"] = gdf.area / 1_000_000
-
-# ============================================================
-# Calculate representative coordinates
-# ============================================================
-
-rep_points = gpd.GeoSeries(
-    gdf.geometry.representative_point(),
-    crs=crs,
-).to_crs(
-    epsg=4326,
-)
-
-gdf["centroid_lon"] = rep_points.x.round(6)
-gdf["centroid_lat"] = rep_points.y.round(6)
-
-# ============================================================
-# Reproject to WGS84
-# ============================================================
-
-gdf = gdf.to_crs(
-    epsg=4326,
-)
-
-# ============================================================
-# Set output data types
-# ============================================================
-
-gdf["zone_id"] = gdf["zone_id"].astype(int)
-
-gdf["area_km2"] = (
-    gdf["area_km2"]
-    .astype(float)
-    .round(2)
-)
+    # Reproject to WGS84
+    gdf_rural = gdf_rural.to_crs("EPSG:4326")
 
 # ============================================================
 # Export GeoJSON
 # ============================================================
 
-gdf.to_file(
-    geojson_output_path,
-    driver="GeoJSON",
-)
+    gdf_rural.to_file(
+        output_file,
+        driver="GeoJSON",
+    )
 
 # ============================================================
 # Summary
 # ============================================================
 
-print("Urban zone polygons created successfully.")
-print(f"Output file : {geojson_output_path}")
-print(f"Urban zones : {len(gdf)}")
+    print("Rural zones created successfully.")
+    print(f"Output file : {output_file}")
+    print(f"Rural zones : {len(gdf_rural)}")
 
-print("\nPreview:")
+except Exception as e:
 
-print(
-    gdf[
-        [
-            "zone_id",
-            "zone_type",
-            "area_km2",
-            "centroid_lon",
-            "centroid_lat",
-        ]
-    ].head()
-)
+    print(f"Processing failed: {e}")
