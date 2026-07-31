@@ -28,7 +28,7 @@ INTERMEDIATE_DIR = DATA_DIR / "intermediate"
 # Input and output files
 # ============================================================
 
-input_raster = RAW_DIR / "ghs-smod" / "GHS_SMOD_clipped_vn.tif"
+input_raster = RAW_DIR / "GHS-SMOD" / "GHS_SMOD_clipped_vn.tif"
 
 output_raster = INTERMEDIATE_DIR / "GHS_SMOD_urban_01.tif"
 
