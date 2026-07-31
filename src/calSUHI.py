@@ -35,7 +35,7 @@ RESULT_DIR = DATA_DIR / "results"
 # Input files
 # ============================================================
 
-lst_file = RAW_DIR / "MYD11A2" / "MYD11A2_A2025_clipped_vn.tif"
+lst_file = RAW_DIR / "MYD11A2_A2025_clipped_vn.tif"
 
 smod_urban_file = INTERMEDIATE_DIR / "GHS_SMOD_urban_01_filtered.tif"
 
