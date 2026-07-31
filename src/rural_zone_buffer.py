@@ -1,5 +1,5 @@
 """
-rural_zone_polygonize.py
+rural_zone_buffer.py
 
 Generate rural zones as ring buffers surrounding urban zones.
 
