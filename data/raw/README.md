@@ -1,6 +1,6 @@
 # Raw Data
 
-This directory stores the original input datasets used for calculating the Surface Urban Heat Island (SUHI) index in Vietnam for 2025.
+This directory contains the original datasets used to estimate Surface Urban Heat Island (SUHI) intensity in Vietnam during the study period (April–August 2025).
 
 ---
 
