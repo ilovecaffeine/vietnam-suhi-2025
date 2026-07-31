@@ -46,6 +46,7 @@ output_excel = RESULT_DIR / "suhi_results.xlsx"
 output_hist_png = FIGURE_DIR / "suhi_histogram.png"
 output_scatter_png = FIGURE_DIR / "suhi_vs_area_scatter.png"
 output_moran_png = FIGURE_DIR / "moran_scatter.png"
+output_lisa_geojson = RESULT_DIR / "urban_zones_lisa.geojson"
 
 # ============================================================
 # Load data
@@ -244,7 +245,7 @@ gdf_lisa = gdf.merge(
 )
 
 gdf_lisa.to_file(
-    RESULT_DIR / "urban_zones_lisa.geojson",
+    output_lisa_geojson,
     driver="GeoJSON",
 )
 
