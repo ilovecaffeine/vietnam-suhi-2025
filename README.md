@@ -19,24 +19,15 @@ This repository provides a reproducible workflow for estimating and analyzing Su
 ## Repository Structure
 
 ```text
-src/                 Python source code
-data/
-    raw/             Raw input datasets (not included)
-    intermediate/    Intermediate processing outputs
-    results/         Final datasets and Excel reports
-figures/             Generated figures
-docs/                Project documentation
+.
+├── 📁 src/                   # Python source code
+├── 📁 data/                  # Data directory
+│   ├── 📁 raw/               # Raw input datasets
+│   ├── 📁 intermediate/      # Intermediate processing outputs
+│   └── 📁 results/           # Final datasets and Excel reports
+├── 📁 figures/               # Generated figures and visual plots
+└── 📁 docs/                  # Project documentation
 ```
-
-```text
-vietnam-suhi-2025/
-├── 📂 src/
-├── 📂 data/
-│   ├── 📁 raw/
-│   ├── 📁 intermediate/
-│   └── 📁 results/
-├── 📂 figures/
-└── 📂 docs/
 
 ## Data
 
