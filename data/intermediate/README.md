@@ -24,4 +24,4 @@ Raster in which each urban cluster is assigned a unique identifier.
 Vector polygons representing individual urban clusters with geometric attributes.
 
 ### `rural_zones.geojson`
-Vector polygons representing rural reference zones (2–10 km ring buffers) associated with each urban cluster for SUHI estimation.
+Vector polygons representing rural reference zones (ring buffers) associated with each urban cluster for SUHI estimation.
