@@ -12,12 +12,25 @@ Output classes
 import numpy as np
 import rasterio
 
+from pathlib import Path
+
+# ============================================================
+# Project directories
+# ============================================================
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+
+DATA_DIR = ROOT_DIR / "data"
+RAW_DIR = DATA_DIR / "raw"
+INTERMEDIATE_DIR = DATA_DIR / "intermediate"
+
 # ============================================================
 # Input and output files
 # ============================================================
 
-input_raster = r"C:\Users\admin\Documents\Code_for_fun\HUI\data\GHS_SMOD_clipped_vn.tif"
-output_raster = r"C:\Users\admin\Documents\Code_for_fun\HUI\data\GHS_SMOD_urban_01.tif"
+input_raster = RAW_DIR / "ghs-smod" / "GHS_SMOD_clipped_vn.tif"
+
+output_raster = INTERMEDIATE_DIR / "GHS_SMOD_urban_01.tif"
 
 # ============================================================
 # Urban class definition
